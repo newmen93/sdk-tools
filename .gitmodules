@@ -90,3 +90,11 @@
     shallow = true
     path = src/zopfli
     url = https://android.googlesource.com/platform/external/zopfli
+[submodule "src/jsoncpp"]
+	shallow = true
+	path = src/jsoncpp
+	url = https://android.googlesource.com/platform/external/jsoncpp
+[submodule "jsoncpp"]
+    shallow = true
+	path = jsoncpp
+	url = https://android.googlesource.com/platform/external/jsoncpp

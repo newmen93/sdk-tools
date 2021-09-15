@@ -68,6 +68,7 @@ add_subdirectory(src/pcre/dist2 EXCLUDE_FROM_ALL)
 add_subdirectory(src/libpng EXCLUDE_FROM_ALL)
 add_subdirectory(src/expat EXCLUDE_FROM_ALL)
 add_subdirectory(src/zopfli EXCLUDE_FROM_ALL)
+add_subdirectory(src/jsoncpp EXCLUDE_FROM_ALL)
 
 add_subdirectory(lib)
 add_subdirectory(build-tools)
