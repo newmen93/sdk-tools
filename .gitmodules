@@ -1,88 +1,88 @@
 [submodule "src/core"]
     shallow = true
-	path = src/core
-	url = https://android.googlesource.com/platform/system/core.git
+    path = src/core
+    url = https://android.googlesource.com/platform/system/core.git
 [submodule "src/extras"]
     shallow = true
-	path = src/extras
-	url = https://android.googlesource.com/platform/system/extras.git
+    path = src/extras
+    url = https://android.googlesource.com/platform/system/extras.git
 [submodule "src/selinux"]
     shallow = true
-	path = src/selinux
-	url = https://android.googlesource.com/platform/external/selinux.git
+    path = src/selinux
+    url = https://android.googlesource.com/platform/external/selinux.git
 [submodule "src/f2fs-tools"]
     shallow = true
-	path = src/f2fs-tools
-	url = https://android.googlesource.com/platform/external/f2fs-tools.git
+    path = src/f2fs-tools
+    url = https://android.googlesource.com/platform/external/f2fs-tools.git
 [submodule "src/e2fsprogs"]
     shallow = true
-	path = src/e2fsprogs
-	url = https://android.googlesource.com/platform/external/e2fsprogs.git
+    path = src/e2fsprogs
+    url = https://android.googlesource.com/platform/external/e2fsprogs.git
 [submodule "src/boringssl"]
     shallow = true
-	path = src/boringssl
-	url = https://boringssl.googlesource.com/boringssl.git
+    path = src/boringssl
+    url = https://boringssl.googlesource.com/boringssl.git
 [submodule "src/mkbootimg"]
     shallow = true
-	path = src/mkbootimg
-	url = https://android.googlesource.com/platform/system/tools/mkbootimg
+    path = src/mkbootimg
+    url = https://android.googlesource.com/platform/system/tools/mkbootimg
 [submodule "src/avb"]
     shallow = true
-	path = src/avb
-	url = https://android.googlesource.com/platform/external/avb
+    path = src/avb
+    url = https://android.googlesource.com/platform/external/avb
 [submodule "src/libbase"]
     shallow = true
-	path = src/libbase
-	url = https://android.googlesource.com/platform/system/libbase
+    path = src/libbase
+    url = https://android.googlesource.com/platform/system/libbase
 [submodule "src/libziparchive"]
     shallow = true
-	path = src/libziparchive
-	url = https://android.googlesource.com/platform/system/libziparchive
+    path = src/libziparchive
+    url = https://android.googlesource.com/platform/system/libziparchive
 [submodule "src/base"]
     shallow = true
-	path = src/base
-	url = https://android.googlesource.com/platform/frameworks/base
+    path = src/base
+    url = https://android.googlesource.com/platform/frameworks/base
 [submodule "src/native"]
     shallow = true
-	path = src/native
-	url = https://android.googlesource.com/platform/frameworks/native
+    path = src/native
+    url = https://android.googlesource.com/platform/frameworks/native
 [submodule "src/adb"]
     shallow = true
-	path = src/adb
-	url = https://android.googlesource.com/platform/packages/modules/adb.git
+    path = src/adb
+    url = https://android.googlesource.com/platform/packages/modules/adb.git
 [submodule "src/logging"]
     shallow = true
-	path = src/logging
-	url = https://android.googlesource.com/platform/system/logging.git
+    path = src/logging
+    url = https://android.googlesource.com/platform/system/logging.git
 [submodule "src/incremental_delivery"]
     shallow = true
-	path = src/incremental_delivery
-	url = https://android.googlesource.com/platform/system/incremental_delivery
+    path = src/incremental_delivery
+    url = https://android.googlesource.com/platform/system/incremental_delivery
 [submodule "src/fmtlib"]
     shallow = true
-	path = src/fmtlib
-	url = https://android.googlesource.com/platform/external/fmtlib.git
+    path = src/fmtlib
+    url = https://android.googlesource.com/platform/external/fmtlib.git
 [submodule "src/pcre"]
     shallow = true
-	path = src/pcre
-	url = https://android.googlesource.com/platform/external/pcre.git
+    path = src/pcre
+    url = https://android.googlesource.com/platform/external/pcre.git
 [submodule "src/libpng"]
     shallow = true
-	path = src/libpng
-	url = https://android.googlesource.com/platform/external/libpng.git
+    path = src/libpng
+    url = https://android.googlesource.com/platform/external/libpng.git
 [submodule "src/expat"]
     shallow = true
-	path = src/expat
-	url = https://android.googlesource.com/platform/external/expat.git
+    path = src/expat
+    url = https://android.googlesource.com/platform/external/expat.git
 [submodule "src/protobuf"]
     shallow = true
-	path = src/protobuf
-	url = https://android.googlesource.com/platform/external/protobuf.git
+    path = src/protobuf
+    url = https://android.googlesource.com/platform/external/protobuf.git
 [submodule "src/aidl"]
     shallow = true
-	path = src/aidl
-	url = https://android.googlesource.com/platform/system/tools/aidl
+    path = src/aidl
+    url = https://android.googlesource.com/platform/system/tools/aidl
 [submodule "src/unwinding"]
-	shallow = true
-	path = src/unwinding
-	url = https://android.googlesource.com/platform/system/unwinding
+    shallow = true
+    path = src/unwinding
+    url = https://android.googlesource.com/platform/system/unwinding
