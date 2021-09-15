@@ -27,17 +27,17 @@ target_compile_definitions(libandroidfw PUBLIC -DSTATIC_ANDROIDFW_FOR_TOOLS)
 target_compile_definitions(libandroidfw PRIVATE -D_GNU_SOURCE -DNDEBUG)
 
 target_include_directories(libandroidfw PUBLIC
-	${SRC}/base/libs/androidfw/include
-	${SRC}/core/libcutils/include
-	${SRC}/logging/liblog/include
-	${SRC}/core/libsystem/include
-	${SRC}/core/libutils/include
-	${SRC}/libbase/include
-	${SRC}/native/include
-	${SRC}/native/libs/binder/include
-	${SRC}/libziparchive/include
-	${SRC}/incremental_delivery/incfs/util/include
-	${SRC}/incremental_delivery/incfs/kernel-headers
-	)
-	
+    ${SRC}/base/libs/androidfw/include
+    ${SRC}/core/libcutils/include
+    ${SRC}/logging/liblog/include
+    ${SRC}/core/libsystem/include
+    ${SRC}/core/libutils/include
+    ${SRC}/libbase/include
+    ${SRC}/native/include
+    ${SRC}/native/libs/binder/include
+    ${SRC}/libziparchive/include
+    ${SRC}/incremental_delivery/incfs/util/include
+    ${SRC}/incremental_delivery/incfs/kernel-headers
+    )
+    
 target_link_libraries(libandroidfw PUBLIC fmt::fmt)
