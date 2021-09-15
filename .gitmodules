@@ -86,3 +86,7 @@
     shallow = true
     path = src/unwinding
     url = https://android.googlesource.com/platform/system/unwinding
+[submodule "src/zopfli"]
+    shallow = true
+    path = src/zopfli
+    url = https://android.googlesource.com/platform/external/zopfli
