@@ -1,0 +1,8 @@
+add_library(libcrypto STATIC
+	${SRC}/core/libcrypto_utils/android_pubkey.cpp
+	)
+
+target_include_directories(libcrypto PUBLIC
+	${SRC}/core/libcrypto_utils/include 
+	${SRC}/boringssl/include
+	)

@@ -1,0 +1,15 @@
+add_library(libfsmgr STATIC
+	core/fs_mgr/liblp/images.cpp
+	core/fs_mgr/liblp/partition_opener.cpp
+	core/fs_mgr/liblp/reader.cpp
+	core/fs_mgr/liblp/utility.cpp
+	core/fs_mgr/liblp/writer.cpp)
+	
+target_include_directories(libfsmgr PRIVATE
+	${SRC}/core/fs_mgr/liblp/include 
+	${SRC}/libbase/include
+	${SRC}/extras/ext4_utils/include 
+	${SRC}/core/libsparse/include
+	${SRC}/boringssl/include
+	)
+target_link_libraries(libfsmgr PUBLIC fmt::fmt)
