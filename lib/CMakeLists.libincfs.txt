@@ -3,9 +3,11 @@ add_library(libincfs STATIC
     ${SRC}/incremental_delivery/incfs/incfs.cpp
     ${SRC}/incremental_delivery/incfs/MountRegistry.cpp
     ${SRC}/incremental_delivery/incfs/path.cpp
+    ${SRC}/incremental_delivery/incfs/util/map_ptr.cpp
+    ${SRC}/incremental_delivery/sysprop/IncrementalProperties.sysprop.cpp
     )
     
-set(INCLUDE_PATH
+target_include_directories(libincfs PUBLIC
     ${SRC}/incremental_delivery/incfs/include 
     ${SRC}/incremental_delivery/incfs/util/include 
     ${SRC}/incremental_delivery/sysprop/include
@@ -18,12 +20,3 @@ set(INCLUDE_PATH
     )
 target_include_directories(libincfs PUBLIC ${INCLUDE_PATH})
 
-add_library(libincfs-utils STATIC
-    ${SRC}/incremental_delivery/incfs/util/map_ptr.cpp
-    )
-target_include_directories(libincfs-utils PUBLIC ${INCLUDE_PATH})
-
-add_library(libsysprop STATIC
-    ${SRC}/incremental_delivery/sysprop/IncrementalProperties.sysprop.cpp
-    )
-target_include_directories(libsysprop PUBLIC ${INCLUDE_PATH})

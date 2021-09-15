@@ -157,7 +157,6 @@ target_include_directories(aapt2 PUBLIC ${INCLUDE_PATH})
 target_link_libraries(aapt2 
     libaapt2
     libandroidfw 
-    libincfs-utils
     libincfs
     libselinux
     libsepol
@@ -168,7 +167,6 @@ target_link_libraries(aapt2
     libbase
     libbuildversion
     libprotoc
-    libsysprop
     liblog
     expat
     png_static

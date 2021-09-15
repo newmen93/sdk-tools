@@ -40,7 +40,6 @@ add_executable(aapt ${SRC}/base/tools/aapt/Main.cpp)
 target_link_libraries(aapt
     libaapt
     libandroidfw
-    libincfs-utils
     libincfs
     libutils
     libcutils
@@ -48,7 +47,6 @@ target_link_libraries(aapt
     libziparchive
     libbase
     libbuildversion
-    libsysprop
     libprocessgroup
     liblog
     expat
@@ -57,3 +55,5 @@ target_link_libraries(aapt
     png_static
     c++_static
     )
+    
+    
