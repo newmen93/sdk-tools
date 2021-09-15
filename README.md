@@ -1,7 +1,9 @@
 Building platform-tools and build-tools for Android, such as aapt aapt2 aidl zipalign adb fastboot ... etc</br>
-if you need other tools, please refer to existing tools to add CMakeLists.txt 
+
+If you need other tools, please refer to existing tools to add CMakeLists.txt 
 
 Currently only test aarch64 architecture</br>
+
 for other architectures you may need to refer to Android.bp to modify the corresponding CMakeLists.txt
 
  **** 
