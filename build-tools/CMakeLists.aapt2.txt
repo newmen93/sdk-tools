@@ -134,8 +134,8 @@ set(INCLUDE_PATH
     ${SRC}/boringssl/third_party/googletest/include
     ${SRC}/libziparchive/include 
     ${SRC}/libbuildversion/include
-	${SRC}/incremental_delivery/incfs/util/include 
-	${SRC}/incremental_delivery/incfs/kernel-headers
+    ${SRC}/incremental_delivery/incfs/util/include 
+    ${SRC}/incremental_delivery/incfs/kernel-headers
     )
 target_include_directories(libaapt2 PUBLIC ${INCLUDE_PATH})
 

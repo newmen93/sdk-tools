@@ -1,5 +1,5 @@
 add_library(libutils STATIC
-	${SRC}/core/libutils/Errors.cpp
+    ${SRC}/core/libutils/Errors.cpp
     ${SRC}/core/libutils/FileMap.cpp
     ${SRC}/core/libutils/JenkinsHash.cpp
     ${SRC}/core/libutils/LightRefBase.cpp
@@ -20,14 +20,14 @@ add_library(libutils STATIC
     ${SRC}/core/libutils/misc.cpp
     ${SRC}/core/libutils/Trace.cpp
     ${SRC}/core/libutils/Looper.cpp
-	)
+    )
 
 target_include_directories(libutils PUBLIC
-	${SRC}/core/include
-	${SRC}/core/libutils/include
-	${SRC}/core/libprocessgroup/include
-	${SRC}/core/libvndksupport/include
-	${SRC}/logging/liblog/include 
-	${SRC}/libbase/include
-	${SRC}/unwinding/libbacktrace/include
-	)
+    ${SRC}/core/include
+    ${SRC}/core/libutils/include
+    ${SRC}/core/libprocessgroup/include
+    ${SRC}/core/libvndksupport/include
+    ${SRC}/logging/liblog/include 
+    ${SRC}/libbase/include
+    ${SRC}/unwinding/libbacktrace/include
+    )

@@ -1,5 +1,5 @@
 add_library(libpcre2 STATIC
-	${SRC}/pcre/dist2/src/pcre2_auto_possess.c
+    ${SRC}/pcre/dist2/src/pcre2_auto_possess.c
     ${SRC}/pcre/dist2/src/pcre2_compile.c
     ${SRC}/pcre/dist2/src/pcre2_config.c
     ${SRC}/pcre/dist2/src/pcre2_context.c
@@ -30,8 +30,8 @@ add_library(libpcre2 STATIC
 
 target_compile_definitions(libpcre2 PRIVATE -DHAVE_CONFIG_H)
 target_include_directories(libpcre2 PUBLIC
-	${SRC}/libpcre/include 
-	)
+    ${SRC}/libpcre/include 
+    )
 target_include_directories(libpcre2 PRIVATE
-	${SRC}/libpcre/include_internal
-	)
+    ${SRC}/libpcre/include_internal
+    )
