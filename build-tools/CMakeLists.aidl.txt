@@ -70,7 +70,7 @@ target_include_directories(aidl PUBLIC
 target_link_libraries(aidl
     libbase
     liblog
-    fmt::fmt
     boringssl_gtest
+    fmt::fmt
     c++_static
     )
