@@ -43,7 +43,7 @@ foreach(v ${subproject})
 	endif(patches)
 endforeach(v)
 
-if(NOT ${CMAKE_SOURCE_DIR}/src/incremental_delivery/sysprop/include)
+if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/incremental_delivery/sysprop/include)
     execute_process(
         COMMAND mkdir src/incremental_delivery/sysprop/include
         COMMAND cp patches/IncrementalProperties.sysprop.h src/incremental_delivery/sysprop/include

@@ -102,3 +102,11 @@
 	shallow = true
 	path = src/art
 	url = https://android.googlesource.com/platform/art
+[submodule "src/dalvik"]
+	shallow = true
+	path = src/dalvik
+	url = https://android.googlesource.com/platform/dalvik
+[submodule "src/sqlite"]
+	shallow = true
+	path = src/sqlite
+	url = https://android.googlesource.com/platform/external/sqlite
