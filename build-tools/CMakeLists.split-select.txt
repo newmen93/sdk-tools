@@ -37,3 +37,4 @@ target_link_libraries(split-select
     png_static
     c++_static
     )
+    
