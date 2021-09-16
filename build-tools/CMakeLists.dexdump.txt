@@ -65,8 +65,6 @@ include_directories(
     ${SRC}/libziparchive/include
     )
 
-
-
 add_executable(dexdump
     ${SRC}/art/dexdump/dexdump_cfg.cc
     ${SRC}/art/dexdump/dexdump_main.cc
@@ -82,3 +80,4 @@ target_link_libraries(dexdump
     c++_static
     z
     )
+    
