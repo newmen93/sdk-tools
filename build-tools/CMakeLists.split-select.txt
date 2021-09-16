@@ -19,6 +19,7 @@ target_include_directories(split-select PUBLIC
     ${SRC}/base/tools
     ${SRC}/incremental_delivery/incfs/util/include 
     )
+    
 target_link_libraries(split-select
     libaapt
     libandroidfw
