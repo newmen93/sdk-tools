@@ -98,3 +98,7 @@
     shallow = true
 	path = jsoncpp
 	url = https://android.googlesource.com/platform/external/jsoncpp
+[submodule "src/art"]
+	shallow = true
+	path = src/art
+	url = https://android.googlesource.com/platform/art

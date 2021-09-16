@@ -153,7 +153,6 @@ add_executable(aapt2
     ${TOOL_SOURCE}
     )
 target_include_directories(aapt2 PUBLIC ${INCLUDE_PATH})
-#target_link_options(aapt2 PRIVATE -static)
 target_link_libraries(aapt2 
     libaapt2
     libandroidfw 
