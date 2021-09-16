@@ -71,7 +71,8 @@ add_subdirectory(src/zopfli EXCLUDE_FROM_ALL)
 add_subdirectory(src/jsoncpp EXCLUDE_FROM_ALL)
 
 add_subdirectory(lib)
-add_subdirectory(build-tools)
+#add_subdirectory(build-tools)
+add_subdirectory(platform-tools)
 
 find_package(Protobuf REQUIRED)
 
