@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.14.2)
 project(sdk-tools)
 
+# git clone submodule
+execute_process(COMMAND git submodule --quiet update)
+
 if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/incremental_delivery/sysprop/include)
     execute_process(
         COMMAND mkdir src/incremental_delivery/sysprop/include
