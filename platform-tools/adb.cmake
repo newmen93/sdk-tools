@@ -17,8 +17,8 @@ foreach(proto ${PROTO_FILES})
         # execute the protoc command to generate the proto targets
         execute_process(
             COMMAND ${CMAKE_BINARY_DIR}/bin/protoc ${proto}
-                        --proto_path=${ADB_PROTO_DIR}
-                        --cpp_out=${ADB_PROTO_DIR}
+            --proto_path=${ADB_PROTO_DIR}
+            --cpp_out=${ADB_PROTO_DIR}
             WORKING_DIRECTORY ${ADB_PROTO_DIR}
         )
         message(STATUS "generate cpp file ${TARGET_CPP_FILE}")
@@ -44,9 +44,9 @@ else()
     # execute the protoc command to generate the proto targets
     execute_process(
         COMMAND ${CMAKE_BINARY_DIR}/bin/protoc 
-                     ${FASTDEPLOY_PROTO_DIR}/ApkEntry.proto
-                     --proto_path=${FASTDEPLOY_PROTO_DIR}
-                     --cpp_out=${FASTDEPLOY_PROTO_DIR}
+        ${FASTDEPLOY_PROTO_DIR}/ApkEntry.proto
+        --proto_path=${FASTDEPLOY_PROTO_DIR}
+        --cpp_out=${FASTDEPLOY_PROTO_DIR}
         WORKING_DIRECTORY ${FASTDEPLOY_PROTO_DIR}
     )
     message(STATUS "generate cpp file ${TARGET_CPP_FILE}")
