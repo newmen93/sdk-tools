@@ -20,7 +20,7 @@ foreach(proto ${PROTO_FILES})
                         -I ${AAPT2_PROTO_DIR}
                         --cpp_out=${AAPT2_PROTO_DIR}
             WORKING_DIRECTORY ${AAPT2_PROTO_DIR}
-            )
+        )
         message(STATUS "generate cpp file ${TARGET_CPP_FILE}")
         message(STATUS "generate head file ${TARGET_HEAD_FILE}")
     endif()
