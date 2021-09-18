@@ -9,14 +9,18 @@ file(GLOB_RECURSE SRC_FILES
     ${SRC}/openscreen/util/*.cc
     )
 
-#message(FATAL_ERROR ${SRC_FILES})
-    
+foreach(file ${SRC_FILES})
+    if(${file} MATCHES ".*_mac.cc" OR ${file} MATCHES "base64.cc"
+        OR ${file} MATCHES ".*_unittest.cc")
+        list(REMOVE_ITEM SRC_FILES ${file})
+    endif()
+endforeach()
+
 add_library(libopenscreen STATIC ${SRC_FILES})
 target_include_directories(libopenscreen PUBLIC
     ${SRC}/openscreen
     ${SRC}/jsoncpp/include
     ${SRC}/abseil-cpp
     ${SRC}/boringssl/include
-    ${SRC}/protobuf/third_party/googletest/googlemock/include
-    ${SRC}/protobuf/third_party/googletest/googletest/include
     )
+    
