@@ -33,5 +33,3 @@ target_compile_definitions(sqlite3 PRIVATE
     -DSQLITE_ENABLE_DBSTAT_VTAB
     -DNO_ANDROID_FUNCS=1
     )
-    
-target_link_libraries(sqlite3)

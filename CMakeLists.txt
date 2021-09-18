@@ -18,9 +18,7 @@ enable_language(ASM)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fcolor-diagnostics -fPIC -Wno-attributes -std=gnu11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcolor-diagnostics -fPIC -Wno-attributes -std=gnu++2a")
     
-set(TOOLS_VERSION 31.0.2)
-set(TOOLS_VENDOR sdk-tools)
-set(ANDROID_MKE2FS_NAME "mke2fs.android")
+set(TOOLS_VERSION 31.0.3)
 set(SRC ${CMAKE_SOURCE_DIR}/src)
 
 # libfsmgr (required by fastboot) requires a 64-bit off_t for lseek.

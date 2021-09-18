@@ -54,11 +54,6 @@ endif()
 
 set_source_files_properties(${FASTDEPLOY_PROTO_SRC} ${FASTDEPLOY_PROTO_HDRS} PROPERTIES GENERATED TRUE)
 
-add_definitions(
-    -DPLATFORM_TOOLS_VERSION="${TOOLS_VERSION}"
-    -DPLATFORM_TOOLS_VENDOR="${TOOLS_VENDOR}"
-    )
-
 # No fastdeploy because it requires deployagent.inc
 add_library(libadb STATIC
     ${SRC}/adb/adb.cpp
