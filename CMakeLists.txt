@@ -1,55 +1,13 @@
 cmake_minimum_required(VERSION 3.14.2)
 project(sdk-tools)
 
-# See: https://android.googlesource.com/platform/external/boringssl/+/platform-tools-${ANDROID_VERSION}/BORINGSSL_REVISION
-set(BORINGSSL_VERSION ae2bb641735447496bed334c495e4868b981fe32)
-
-# sub project list
-set(subproject 
-    avb
-    adb
-    base
-    core
-    extras
-    libbase
-    libziparchive
-    logging
-    native
-    selinux
-    f2fs-tools
-    e2fsprogs
-    incremental_delivery
-    fmtlib
-    boringssl
-    pcre
-    libpng
-    expat
-    protobuf
-    )
-    
-# TODO: https://cmake.org/cmake/help/v3.0/module/ExternalProject.html
-# To patch the submodule
-execute_process(COMMAND git submodule --quiet update)
-foreach(v ${subproject})
-    file(GLOB patches ${CMAKE_SOURCE_DIR}/patches/${v}/*.patch)
-    if(patches)
-        message(STATUS "Applying patches for: ${v}")
-        execute_process(COMMAND git -C
-            ${CMAKE_SOURCE_DIR}/src/${v} am ${patches}
-            RESULT_VARIABLE ret)
-        if(NOT "${ret}" STREQUAL "0")
-            message(FATAL_ERROR "Couldn't apply patches for ${v}")
-        endif()
-    endif(patches)
-endforeach(v)
-
 if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/incremental_delivery/sysprop/include)
     execute_process(
         COMMAND mkdir src/incremental_delivery/sysprop/include
         COMMAND cp patches/IncrementalProperties.sysprop.h src/incremental_delivery/sysprop/include
         COMMAND cp patches/IncrementalProperties.sysprop.cpp src/incremental_delivery/sysprop
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        )
+    )
 endif()
 
 enable_language(ASM)
