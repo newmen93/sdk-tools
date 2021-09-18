@@ -56,9 +56,9 @@ endif()
 set_source_files_properties(${FASTDEPLOY_PROTO_SRC} ${FASTDEPLOY_PROTO_HDRS} PROPERTIES GENERATED TRUE)
 
 add_definitions(
-	-DPLATFORM_TOOLS_VERSION="${TOOLS_VERSION}"
-	-DPLATFORM_TOOLS_VENDOR="${TOOLS_VENDOR}"
-	)
+    -DPLATFORM_TOOLS_VERSION="${TOOLS_VERSION}"
+    -DPLATFORM_TOOLS_VENDOR="${TOOLS_VENDOR}"
+    )
 
 # No fastdeploy because it requires deployagent.inc
 add_library(libadb STATIC
@@ -96,56 +96,56 @@ add_library(libadb STATIC
     ${SRC}/adb/fdevent/fdevent_epoll.cpp
     ${SRC}/adb/sysdeps_unix.cpp
     ${SRC}/adb/sysdeps/posix/network.cpp
-	${ADB_PROTO_SRC} ${ADB_PROTO_HDRS}
-	)
+    ${ADB_PROTO_SRC} ${ADB_PROTO_HDRS}
+    )
 
 target_compile_definitions(libadb PRIVATE -D_GNU_SOURCE)
 target_compile_definitions(libadb PUBLIC -DADB_HOST=1)
 target_include_directories(libadb PUBLIC
-	${SRC}/base/libs/androidfw/include
-	${SRC}/boringssl/include
-	${SRC}/adb
-	${SRC}/adb/proto
-	${SRC}/adb/crypto/include
-	${SRC}/adb/pairing_auth/include
-	${SRC}/adb/pairing_connection/include
-	${SRC}/adb/tls/include
-	${SRC}/core/include
-	${SRC}/fmtlib/include
-	${SRC}/core/libcrypto_utils/include
-	${SRC}/core/libcutils/include
-	${SRC}/libbase/include
-	${SRC}/libziparchive/include
-	${SRC}/native/include
-	${SRC}/protobuf/src
-	${SRC}/zstd/lib
-	${SRC}/libusb/include
-	${SRC}/brotli/c/include
-	${SRC}/libbuildversion/include
-	${SRC}/mdnsresponder/mDNSShared
-	${SRC}/openscreen
-	${SRC}/abseil-cpp
-	${SRC}/core/diagnose_usb/include
-	${SRC}/boringssl/third_party/googletest/include
-	${SRC}/incremental_delivery/incfs/util/include 
-	)
+    ${SRC}/base/libs/androidfw/include
+    ${SRC}/boringssl/include
+    ${SRC}/adb
+    ${SRC}/adb/proto
+    ${SRC}/adb/crypto/include
+    ${SRC}/adb/pairing_auth/include
+    ${SRC}/adb/pairing_connection/include
+    ${SRC}/adb/tls/include
+    ${SRC}/core/include
+    ${SRC}/fmtlib/include
+    ${SRC}/core/libcrypto_utils/include
+    ${SRC}/core/libcutils/include
+    ${SRC}/libbase/include
+    ${SRC}/libziparchive/include
+    ${SRC}/native/include
+    ${SRC}/protobuf/src
+    ${SRC}/zstd/lib
+    ${SRC}/libusb/include
+    ${SRC}/brotli/c/include
+    ${SRC}/libbuildversion/include
+    ${SRC}/mdnsresponder/mDNSShared
+    ${SRC}/openscreen
+    ${SRC}/abseil-cpp
+    ${SRC}/core/diagnose_usb/include
+    ${SRC}/boringssl/third_party/googletest/include
+    ${SRC}/incremental_delivery/incfs/util/include 
+    )
 
 add_library(libadb_crypto STATIC
     ${SRC}/adb/crypto/key.cpp
     ${SRC}/adb/crypto/rsa_2048_key.cpp
     ${SRC}/adb/crypto/x509_generator.cpp
-	${ADB_PROTO_HDRS}
-	)
+    ${ADB_PROTO_HDRS}
+    )
 
 target_include_directories(libadb_crypto PUBLIC
     ${SRC}/adb
     ${SRC}/adb/crypto/include
     ${SRC}/adb/proto
-	${SRC}/boringssl/include
-	${SRC}/core/libcrypto_utils/include
-	${SRC}/libbase/include
-	${SRC}/protobuf/src
-	)
+    ${SRC}/boringssl/include
+    ${SRC}/core/libcrypto_utils/include
+    ${SRC}/libbase/include
+    ${SRC}/protobuf/src
+    )
 
 add_library(libadb_tls_connection STATIC
     ${SRC}/adb/tls/adb_ca_list.cpp
@@ -155,10 +155,10 @@ add_library(libadb_tls_connection STATIC
 target_include_directories(libadb_tls_connection PUBLIC
     ${SRC}/adb
     ${SRC}/adb/tls/include
-	${SRC}/boringssl/include
-	${SRC}/libbase/include
-	)
-	
+    ${SRC}/boringssl/include
+    ${SRC}/libbase/include
+    )
+    
 add_library(libadb_pairing_connection STATIC
     ${SRC}/adb/pairing_connection/pairing_connection.cpp
     )
@@ -187,7 +187,7 @@ add_library(libadb_sysdeps STATIC
     ${SRC}/adb/sysdeps/env.cpp
     )
 target_include_directories(libadb_sysdeps PUBLIC
-	${SRC}/libbase/include
+    ${SRC}/libbase/include
     ${SRC}/adb
     )
 
@@ -206,12 +206,12 @@ target_include_directories(libfastdeploy PUBLIC
     )
 
 add_library(libcrypto STATIC
-	${SRC}/core/libcrypto_utils/android_pubkey.cpp
-	)
+    ${SRC}/core/libcrypto_utils/android_pubkey.cpp
+    )
 target_include_directories(libcrypto PUBLIC
-	${SRC}/core/libcrypto_utils/include 
-	${SRC}/boringssl/include
-	)
+    ${SRC}/core/libcrypto_utils/include 
+    ${SRC}/boringssl/include
+    )
 
 add_executable(adb
     ${SRC}/adb/client/adb_client.cpp
@@ -228,51 +228,51 @@ add_executable(adb
     ${SRC}/adb/client/incremental_server.cpp
     ${SRC}/adb/client/incremental_utils.cpp
     ${SRC}/adb/shell_service_protocol.cpp
-	${ADB_PROTO_HDRS}
+    ${ADB_PROTO_HDRS}
     )
 
 target_include_directories(adb PRIVATE
-	${SRC}/core/include 
-	${SRC}/libbase/include 
-	${SRC}/adb
-	${SRC}/adb/fastdeploy/deployagent
-	${SRC}/core/libcrypto_utils/include 
-	${SRC}/boringssl/include
-	)
+    ${SRC}/core/include 
+    ${SRC}/libbase/include 
+    ${SRC}/adb
+    ${SRC}/adb/fastdeploy/deployagent
+    ${SRC}/core/libcrypto_utils/include 
+    ${SRC}/boringssl/include
+    )
 target_link_options(adb PRIVATE -static)
 target_link_libraries(adb
-	libadb
-	libadb_crypto
-	libadb_tls_connection
-	libadb_pairing_connection
-	libadb_pairing_auth
-	libcrypto
-	libadb_sysdeps
-	libfastdeploy
-	libincfs
-	libpackagelistparser
-	libselinux
-	libbase
-	libutils
-	libcutils
-	libdiagnoseusb
-	libandroidfw
-	libbuildversion
-	libziparchive
-	libmdnssd
-	libopenscreen
-	libusb
-	libabsl_base
-	libabsl_strings
-	liblog
-	libzstd_static
-	libprotoc
-	brotlicommon-static
-	brotlidec-static
-	brotlienc-static
-	lz4_static
-	c++_static
-	crypto
-	ssl
-	z
-	)
+    libadb
+    libadb_crypto
+    libadb_tls_connection
+    libadb_pairing_connection
+    libadb_pairing_auth
+    libcrypto
+    libadb_sysdeps
+    libfastdeploy
+    libincfs
+    libpackagelistparser
+    libselinux
+    libbase
+    libutils
+    libcutils
+    libdiagnoseusb
+    libandroidfw
+    libbuildversion
+    libziparchive
+    libmdnssd
+    libopenscreen
+    libusb
+    libabsl_base
+    libabsl_strings
+    liblog
+    libzstd_static
+    libprotoc
+    brotlicommon-static
+    brotlidec-static
+    brotlienc-static
+    lz4_static
+    c++_static
+    crypto
+    ssl
+    z
+    )

@@ -7,40 +7,40 @@ set(BORINGSSL_VERSION ae2bb641735447496bed334c495e4868b981fe32)
 # sub project list
 set(subproject 
     avb
-	adb
-	base
-	core
-	extras
-	libbase
-	libziparchive
-	logging
-	native
-	selinux
-	f2fs-tools
-	e2fsprogs
-	incremental_delivery
-	fmtlib
-	boringssl
-	pcre
-	libpng
-	expat
-	protobuf
-	)
-	
+    adb
+    base
+    core
+    extras
+    libbase
+    libziparchive
+    logging
+    native
+    selinux
+    f2fs-tools
+    e2fsprogs
+    incremental_delivery
+    fmtlib
+    boringssl
+    pcre
+    libpng
+    expat
+    protobuf
+    )
+    
 # TODO: https://cmake.org/cmake/help/v3.0/module/ExternalProject.html
 # To patch the submodule
 execute_process(COMMAND git submodule --quiet update)
 foreach(v ${subproject})
-	file(GLOB patches ${CMAKE_SOURCE_DIR}/patches/${v}/*.patch)
-	if(patches)
-		message(STATUS "Applying patches for: ${v}")
-		execute_process(COMMAND git -C
-			${CMAKE_SOURCE_DIR}/src/${v} am ${patches}
-			RESULT_VARIABLE ret)
-		if(NOT "${ret}" STREQUAL "0")
-			message(FATAL_ERROR "Couldn't apply patches for ${v}")
-		endif()
-	endif(patches)
+    file(GLOB patches ${CMAKE_SOURCE_DIR}/patches/${v}/*.patch)
+    if(patches)
+        message(STATUS "Applying patches for: ${v}")
+        execute_process(COMMAND git -C
+            ${CMAKE_SOURCE_DIR}/src/${v} am ${patches}
+            RESULT_VARIABLE ret)
+        if(NOT "${ret}" STREQUAL "0")
+            message(FATAL_ERROR "Couldn't apply patches for ${v}")
+        endif()
+    endif(patches)
 endforeach(v)
 
 if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/incremental_delivery/sysprop/include)
@@ -72,14 +72,14 @@ add_subdirectory(src/libpng EXCLUDE_FROM_ALL)
 add_subdirectory(src/expat EXCLUDE_FROM_ALL)
 add_subdirectory(src/zopfli EXCLUDE_FROM_ALL)
 add_subdirectory(src/jsoncpp EXCLUDE_FROM_ALL)
-#add_subdirectory(src/protobuf/cmake EXCLUDE_FROM_ALL)
 add_subdirectory(src/zstd/build/cmake EXCLUDE_FROM_ALL)
 add_subdirectory(src/lz4/build/cmake EXCLUDE_FROM_ALL)
 add_subdirectory(src/brotli EXCLUDE_FROM_ALL)
+#add_subdirectory(src/protobuf/cmake EXCLUDE_FROM_ALL)
 #add_subdirectory(src/abseil-cpp EXCLUDE_FROM_ALL)
 
 add_subdirectory(lib)
-#add_subdirectory(build-tools)
+add_subdirectory(build-tools)
 add_subdirectory(platform-tools)
 
 find_package(Protobuf REQUIRED)
@@ -88,9 +88,9 @@ find_package(Protobuf REQUIRED)
 set(CPACK_SOURCE_GENERATOR "TXZ")
 set(CPACK_SOURCE_PACKAGE_FILE_NAME "${PROJECT_NAME}-${TOOLS_VERSION}")
 set(CPACK_SOURCE_IGNORE_FILES "/patches/" "/build/" "/.git/" "/tests/"
-	"/testdata/" "/extras/simpleperf/scripts/" "\\\\.so$" "\\\\.a$" "\\\\.zip$"
-	"/vendor/base/[a-k].*" "/vendor/base/[m-z].*" "without_trace_offcpu.html"
-	"\\\\.orig" "\\\\.rej" "aes_128_gcm.txt" "aes_256_gcm.txt"
-	"/fuzz/" "\\\\.tar$" "\\\\.tar\\\\..*$" "\\\\.tgz$" "\\\\.data$"
-	"/wycheproof_testvectors/")
+    "/testdata/" "/extras/simpleperf/scripts/" "\\\\.so$" "\\\\.a$" "\\\\.zip$"
+    "/vendor/base/[a-k].*" "/vendor/base/[m-z].*" "without_trace_offcpu.html"
+    "\\\\.orig" "\\\\.rej" "aes_128_gcm.txt" "aes_256_gcm.txt"
+    "/fuzz/" "\\\\.tar$" "\\\\.tar\\\\..*$" "\\\\.tgz$" "\\\\.data$"
+    "/wycheproof_testvectors/")
 include(CPack)
