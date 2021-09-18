@@ -12,7 +12,7 @@ include_directories(
     ${SRC}/e2fsprogs/lib/uuid
     ${SRC}/lz4/lib
     ${SRC}/system/core/libsparse/include
-)
+    )
 
 add_executable(make_f2fs 
     ${SRC}/f2fs-tools/lib/libf2fs.c

@@ -20,7 +20,7 @@ foreach(proto ${PROTO_FILES})
                         --proto_path=${ADB_PROTO_DIR}
                         --cpp_out=${ADB_PROTO_DIR}
             WORKING_DIRECTORY ${ADB_PROTO_DIR}
-            )
+        )
         message(STATUS "generate cpp file ${TARGET_CPP_FILE}")
         message(STATUS "generate head file ${TARGET_HEAD_FILE}")
     endif()
@@ -48,7 +48,7 @@ else()
                      --proto_path=${FASTDEPLOY_PROTO_DIR}
                      --cpp_out=${FASTDEPLOY_PROTO_DIR}
         WORKING_DIRECTORY ${FASTDEPLOY_PROTO_DIR}
-            )
+    )
     message(STATUS "generate cpp file ${TARGET_CPP_FILE}")
     message(STATUS "generate head file ${TARGET_HEAD_FILE}")
 endif()
