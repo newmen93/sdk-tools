@@ -17,7 +17,7 @@ foreach(proto ${PROTO_FILES})
         # execute the protoc command to generate the proto targets
         execute_process(
             COMMAND ${CMAKE_BINARY_DIR}/bin/protoc ${proto}
-            -proto_path=${AAPT2_PROTO_DIR}
+            --proto_path=${AAPT2_PROTO_DIR}
             --cpp_out=${AAPT2_PROTO_DIR}
             WORKING_DIRECTORY ${AAPT2_PROTO_DIR}
         )
