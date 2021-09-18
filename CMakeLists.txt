@@ -43,8 +43,6 @@ add_subdirectory(lib)
 add_subdirectory(build-tools)
 add_subdirectory(platform-tools)
 
-find_package(Protobuf REQUIRED)
-
 # CPack configuration for creating source tarballs which already include
 set(CPACK_SOURCE_GENERATOR "TXZ")
 set(CPACK_SOURCE_PACKAGE_FILE_NAME "${PROJECT_NAME}-${TOOLS_VERSION}")
