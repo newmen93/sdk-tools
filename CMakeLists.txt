@@ -58,7 +58,10 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fcolor-diagnostics -fPIC -Wno-attributes -s
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcolor-diagnostics -fPIC -Wno-attributes -std=gnu++2a")
     
 set(TOOLS_VERSION 31.0.2)
+set(TOOLS_VENDOR sdk-tools)
+set(ANDROID_MKE2FS_NAME "mke2fs.android")
 set(SRC ${CMAKE_SOURCE_DIR}/src)
+
 # libfsmgr (required by fastboot) requires a 64-bit off_t for lseek.
 add_definitions(-D_FILE_OFFSET_BITS=64)
 
@@ -69,6 +72,11 @@ add_subdirectory(src/libpng EXCLUDE_FROM_ALL)
 add_subdirectory(src/expat EXCLUDE_FROM_ALL)
 add_subdirectory(src/zopfli EXCLUDE_FROM_ALL)
 add_subdirectory(src/jsoncpp EXCLUDE_FROM_ALL)
+#add_subdirectory(src/protobuf/cmake EXCLUDE_FROM_ALL)
+add_subdirectory(src/zstd/build/cmake EXCLUDE_FROM_ALL)
+add_subdirectory(src/lz4/build/cmake EXCLUDE_FROM_ALL)
+add_subdirectory(src/brotli EXCLUDE_FROM_ALL)
+#add_subdirectory(src/abseil-cpp EXCLUDE_FROM_ALL)
 
 add_subdirectory(lib)
 #add_subdirectory(build-tools)

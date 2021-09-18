@@ -110,3 +110,31 @@
 	shallow = true
 	path = src/sqlite
 	url = https://android.googlesource.com/platform/external/sqlite
+[submodule "src/lz4"]
+	shallow = true
+	path = src/lz4
+	url = https://android.googlesource.com/platform/external/lz4
+[submodule "src/zstd"]
+	shallow = true
+	path = src/zstd
+	url = https://android.googlesource.com/platform/external/zstd
+[submodule "src/libusb"]
+	shallow = true
+	path = src/libusb
+	url = https://android.googlesource.com/platform/external/libusb
+[submodule "src/brotli"]
+	shallow = true
+	path = src/brotli
+	url = https://android.googlesource.com/platform/external/brotli
+[submodule "src/mdnsresponder"]
+	shallow = true
+	path = src/mdnsresponder
+	url = https://android.googlesource.com/platform/external/mdnsresponder
+[submodule "src/openscreen"]
+	shallow = true
+	path = src/openscreen
+	url = https://chromium.googlesource.com/openscreen
+[submodule "src/abseil-cpp"]
+	shallow = true
+	path = src/abseil-cpp
+	url = https://android.googlesource.com/platform/external/abseil-cpp
