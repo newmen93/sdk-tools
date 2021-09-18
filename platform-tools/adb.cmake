@@ -43,8 +43,7 @@ if(EXISTS ${FASTDEPLOY_PROTO_DIR}/ApkEntry.pb.h
 else()
     # execute the protoc command to generate the proto targets
     execute_process(
-        COMMAND ${CMAKE_BINARY_DIR}/bin/protoc 
-        ${FASTDEPLOY_PROTO_DIR}/ApkEntry.proto
+        COMMAND ${CMAKE_BINARY_DIR}/bin/protoc ${FASTDEPLOY_PROTO_DIR}/ApkEntry.proto
         --proto_path=${FASTDEPLOY_PROTO_DIR}
         --cpp_out=${FASTDEPLOY_PROTO_DIR}
         WORKING_DIRECTORY ${FASTDEPLOY_PROTO_DIR}
