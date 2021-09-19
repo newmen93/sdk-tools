@@ -14,7 +14,7 @@ cd /path/to/sdk-tools
 mkdir build && cd build
 
 # settings the ndk toolchain
-NDK_TOOLCHAIN=/path/to/android-ndk-r23/toolchains/llvm/prebuilt/linux-aarch64
+NDK_TOOLCHAIN=/path/to/android-ndk-r23/toolchains/llvm/prebuilt/linux-x86_64
 
 cmake -G 'Ninja' \
     -DCMAKE_C_COMPILER=$NDK_TOOLCHAIN/bin/aarch64-linux-android30-clang \
