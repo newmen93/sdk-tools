@@ -18,5 +18,3 @@ target_include_directories(libincfs PUBLIC
     ${SRC}/selinux/libselinux/include
     ${SRC}/logging/liblog/include 
     )
-target_include_directories(libincfs PUBLIC ${INCLUDE_PATH})
-

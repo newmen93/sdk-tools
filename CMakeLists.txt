@@ -14,16 +14,19 @@ if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/incremental_delivery/sysprop/include)
 endif()
 
 enable_language(ASM)
+
 # set global cflags and cxxflags
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fcolor-diagnostics -fPIC -Wno-attributes -std=gnu11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcolor-diagnostics -fPIC -Wno-attributes -std=gnu++2a")
-    
-set(TOOLS_VERSION 31.0.3)
-set(SRC ${CMAKE_SOURCE_DIR}/src)
+set(CMAKE_EXE_LINKER_FLAGS "-static")
 
-# libfsmgr (required by fastboot) requires a 64-bit off_t for lseek.
+set(TOOLS_VERSION 31.0.3)
+set(SRC ${PROJECT_SOURCE_DIR}/src)
+
+# 64-bit off_t for lseek.
 add_definitions(-D_FILE_OFFSET_BITS=64)
 
+# thrid part library
 add_subdirectory(src/boringssl EXCLUDE_FROM_ALL)
 add_subdirectory(src/fmtlib EXCLUDE_FROM_ALL)
 add_subdirectory(src/pcre/dist2 EXCLUDE_FROM_ALL)
@@ -37,17 +40,24 @@ add_subdirectory(src/brotli EXCLUDE_FROM_ALL)
 #add_subdirectory(src/protobuf/cmake EXCLUDE_FROM_ALL)
 #add_subdirectory(src/abseil-cpp EXCLUDE_FROM_ALL)
 
+# start building
 add_subdirectory(lib)
 add_subdirectory(build-tools)
 add_subdirectory(platform-tools)
 
 # CPack configuration for creating source tarballs which already include
+set(CPACK_PACKAGE_DIRECTORY ${PROJECT_SOURCE_DIR}/pack)
+set(CPACK_RESOURCE_FILE_LICENSE "${PROJECT_SOURCE_DIR}/LICENSE")
 set(CPACK_SOURCE_GENERATOR "TXZ")
 set(CPACK_SOURCE_PACKAGE_FILE_NAME "${PROJECT_NAME}-${TOOLS_VERSION}")
-set(CPACK_SOURCE_IGNORE_FILES "/patches/" "/build/" "/.git/" "/tests/"
-    "/testdata/" "/extras/simpleperf/scripts/" "\\\\.so$" "\\\\.a$" "\\\\.zip$"
-    "/vendor/base/[a-k].*" "/vendor/base/[m-z].*" "without_trace_offcpu.html"
-    "\\\\.orig" "\\\\.rej" "aes_128_gcm.txt" "aes_256_gcm.txt"
-    "/fuzz/" "\\\\.tar$" "\\\\.tar\\\\..*$" "\\\\.tgz$" "\\\\.data$"
-    "/wycheproof_testvectors/")
+set(CPACK_SOURCE_IGNORE_FILES 
+    ${PROJECT_SOURCE_DIR}/.git
+    ${PROJECT_SOURCE_DIR}/.gitignore
+    ${PROJECT_SOURCE_DIR}/.gitmodules
+    ${PROJECT_SOURCE_DIR}/build
+    ${PROJECT_SOURCE_DIR}/patches
+    ${PROJECT_SOURCE_DIR}/pack
+    ${PROJECT_SOURCE_DIR}/src
+    )
+    
 include(CPack)

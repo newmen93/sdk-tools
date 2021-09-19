@@ -34,6 +34,7 @@ include_directories(
     ${SRC}/logging/liblog/include
     ${SRC}/libbuildversion/include
     ${SRC}/incremental_delivery/incfs/util/include 
+    ${SRC}/incremental_delivery/incfs/kernel-headers
     )
     
 add_executable(aapt ${SRC}/base/tools/aapt/Main.cpp)

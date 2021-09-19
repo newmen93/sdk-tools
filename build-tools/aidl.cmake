@@ -57,7 +57,7 @@ add_executable(aidl
     ${SRC}/aidl/parser.cpp
     ${SRC}/aidl/preprocess.cpp
     ${SRC}/aidl/main.cpp
-    ${BISON_LangParser_OUTPUTS}
+    #${BISON_LangParser_OUTPUTS}
     ${FLEX_LangScanner_OUTPUTS}
     )
     

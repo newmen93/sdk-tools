@@ -25,12 +25,10 @@ add_library(libcutils STATIC
 
 target_compile_definitions(libcutils PRIVATE -D_GNU_SOURCE)
 
-target_include_directories(libcutils PRIVATE
+target_include_directories(libcutils PUBLIC
     ${SRC}/core/libutils/include
+    ${SRC}/core/libcutils/include
     ${SRC}/logging/liblog/include 
     ${SRC}/libbase/include
     )
     
-target_include_directories(libcutils PUBLIC
-    ${SRC}/core/libcutils/include libbase/include
-    )

@@ -162,13 +162,15 @@ add_library(libprotoc STATIC
     ${SRC}/protobuf/src/google/protobuf/compiler/zip_writer.cc
     )
 
-set(INCLUDE_PATH
+target_compile_definitions(libprotoc PRIVATE -DHAVE_ZLIB=1)
+target_include_directories(libprotoc PUBLIC 
     ${SRC}/protobuf/android
     ${SRC}/protobuf/src
     )
-target_compile_definitions(libprotoc PRIVATE -DHAVE_ZLIB=1)
-target_include_directories(libprotoc PUBLIC ${INCLUDE_PATH})
     
 add_executable(protoc ${SRC}/protobuf/src/google/protobuf/compiler/main.cc)
-target_include_directories(protoc PUBLIC ${INCLUDE_PATH})
+target_include_directories(protoc PUBLIC 
+    ${SRC}/protobuf/android
+    ${SRC}/protobuf/src
+    )
 target_link_libraries(protoc libprotoc liblog z)
