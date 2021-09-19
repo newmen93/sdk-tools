@@ -1,18 +1,6 @@
 cmake_minimum_required(VERSION 3.14.2)
 project(sdk-tools)
 
-# git clone submodule
-execute_process(COMMAND git submodule --quiet update)
-
-if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/incremental_delivery/sysprop/include)
-    execute_process(
-        COMMAND mkdir src/incremental_delivery/sysprop/include
-        COMMAND cp patches/IncrementalProperties.sysprop.h src/incremental_delivery/sysprop/include
-        COMMAND cp patches/IncrementalProperties.sysprop.cpp src/incremental_delivery/sysprop
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    )
-endif()
-
 enable_language(ASM)
 
 # set global cflags and cxxflags
@@ -25,6 +13,27 @@ set(SRC ${PROJECT_SOURCE_DIR}/src)
 
 # 64-bit off_t for lseek.
 add_definitions(-D_FILE_OFFSET_BITS=64)
+
+# git clone submodule
+execute_process(COMMAND git submodule --quiet update)
+
+if(NOT EXISTS ${SRC}/incremental_delivery/sysprop/include)
+    execute_process(
+        COMMAND mkdir src/incremental_delivery/sysprop/include
+        COMMAND cp patches/IncrementalProperties.sysprop.h src/incremental_delivery/sysprop/include
+        COMMAND cp patches/IncrementalProperties.sysprop.cpp src/incremental_delivery/sysprop
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
+endif()
+
+if(NOT EXISTS ${SRC}/adb/fastdeploy/deployagent/deployagent.inc
+  OR NOT EXISTS ${SRC}/adb/fastdeploy/deployagent/deployagentscript.inc)
+    execute_process(
+        COMMAND cp patches/deployagent.inc src/adb/fastdeploy/deployagent/deployagent.inc
+        COMMAND cp patches/deployagentscript.inc src/adb/fastdeploy/deployagent/deployagentscript.inc
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
+endif()
 
 # thrid part library
 add_subdirectory(src/boringssl EXCLUDE_FROM_ALL)
