@@ -11,6 +11,7 @@ For other architectures you may need to refer to `Android.bp` to modify the corr
 
 ```bash
 cd /path/to/sdk-tools 
+
 mkdir build && cd build
 
 # settings the ndk toolchain
