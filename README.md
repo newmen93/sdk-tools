@@ -24,6 +24,10 @@ cmake -G 'Ninja' \
     ..
 
 ninja -j16
+
+# package the source code
+ninja package_source
+
 ```
 
  **** 
